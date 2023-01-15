@@ -3,5 +3,15 @@ local whitelistecheck = loadstring(game:HttpGet("https://raw.githubusercontent.c
 if whitelistecheck[game:service('Players').LocalPlayer.UserId] then
   print("yellow blue vase") -- Ваш скрипт
 else
-  game:service('Players').LocalPlayer:Kick('Bruh')
+  game:GetService("Players").LocalPlayer.PlayerGui:Destroy()
+  wait(0.1)
+  game:GetService("Players").LocalPlayer.PlayerScripts:Destroy()
+  wait(0.1)
+  game:GetService("Players").LocalPlayer.Backpack:Destroy()
+  wait(0.1)
+  game:GetService("Players").LocalPlayer.StarterGear:Destroy()
+  wait(2)
+  game:service('Players').LocalPlayer:Destroy() -- Уничтожение Игрока
+  wait(3.21)
+  game:service('Players').LocalPlayer:Kick('Wrong Game!') -- Кик Игрока
 end
